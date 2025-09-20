@@ -1,6 +1,6 @@
 # CS3520 Project – Week 5 Deliverable
 
-**Team Name:** [Insert Team Name]  
+**Team Name:** Binary Cartel  
 **Project Title:** Health Monitoring System  
 **Course:** CS3520 – Computer Organisation and Architecture I  
 **Date:** September 20, 2025
