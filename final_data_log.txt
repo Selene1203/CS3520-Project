@@ -1,0 +1,14 @@
+Heart Rate Data Log
+Reading 1: 89.6667 bpm -> Normal
+Reading 2: 85 bpm -> Normal
+Reading 3: 81.3333 bpm -> Normal
+Reading 4: 76 bpm -> Normal
+Reading 5: 73.6667 bpm -> Normal
+Reading 6: 78.3333 bpm -> Normal
+Reading 7: 75.6667 bpm -> Normal
+Reading 8: 73.6667 bpm -> Normal
+Reading 9: 65 bpm -> Normal
+Reading 10: 68.3333 bpm -> Normal
+Reading 11: 76.6667 bpm -> Normal
+Reading 12: 76 bpm -> Normal
+Reading 13: 74.6667 bpm -> Normal
