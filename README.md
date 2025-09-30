@@ -1,9 +1,9 @@
 # CS3520 Domain Analysis Report
 
-**Team Name:** Binary Cartel
-**Project Title:** Health Monitoring System
-**Date:** 21st September 2025
-**Course:** CS3520 - Computer Organisation and Architecture I
+**Team Name:** Binary Cartel  
+**Project Title:** Health Monitoring System  
+**Date:** 21st September 2025  
+**Course:** CS3520 - Computer Organisation and Architecture I  
 
 ---
 
