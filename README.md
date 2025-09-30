@@ -19,7 +19,7 @@ By enabling real-time monitoring of vital signs such as heart rate, body tempera
 
 | Application                | Short Description                                  | Key Computational Tasks                              | Notes (Relevance)                       |
 | -------------------------- | -------------------------------------------------- | ---------------------------------------------------- | --------------------------------------- |
-| **Vital Signs Monitoring** | Track heart rate, temperature, and activity levels | Sensor data acquisition, filtering, basic statistics | Essential for personal health awareness |
+| **Vital Signs Monitoring** | Track heart rate and activity levels | Sensor data acquisition, filtering, basic statistics | Essential for personal health awareness |
 | **Anomaly Detection**      | Identify irregularities (e.g., fever, abnormal HR) | Lightweight ML inference, pattern recognition        | Supports early diagnosis & reduces risk |
 | **Data Logging**           | Maintain daily health records                      | Storage, indexing, lightweight encryption            | Enables continuity of care for patients |
 | **Emergency Alerts**       | Notify healthcare workers/family in emergencies    | Event handling, SMS/USSD, secure communication       | Life-saving in urgent cases             |
