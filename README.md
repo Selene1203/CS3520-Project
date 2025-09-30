@@ -1,201 +1,61 @@
-# CS3520 Project – Week 5 Deliverable
+# CS3520 Domain Analysis Report
 
-**Team Name:** [Insert Team Name]  
-**Project Title:** Health Monitoring System  
-**Course:** CS3520 – Computer Organisation and Architecture I  
-**Date:** September 20, 2025
-
----
-
-## 1. Introduction
-
-Our project focuses on the design of a **Health Monitoring System** that continuously tracks a patient's vital signs, issues timely warnings when abnormalities are detected, and provides personalized health improvement tips using AI techniques. This system addresses the urgent healthcare challenges in Africa, particularly in rural areas where medical facilities are scarce and healthcare services are often prohibitively expensive.
-
-### Relevance to Mobile AI Telephony
-
-The integration of mobile AI telephony is crucial for healthcare accessibility in developing regions, particularly in Africa and Lesotho. Low-cost mobile devices with built-in AI capabilities can:
-
-- **Bridge the healthcare gap** in rural areas with limited medical infrastructure
-- **Provide real-time health monitoring** without requiring expensive medical equipment
-- **Enable offline functionality** crucial for areas with unreliable internet connectivity
-- **Offer energy-efficient solutions** suitable for regions with limited power infrastructure
-- **Deliver cost-effective healthcare** making basic health monitoring accessible to low-income populations
-
-### Project Goal
-
-The ultimate goal of this project is to **design and simulate a RISC-V–based processor** with built-in AI capabilities tailored specifically to the workloads of health monitoring applications. This custom processor will enable efficient handling of:
-- Sensor data acquisition
-- Lightweight AI inference
-- Signal processing
-- Secure communication
-- Energy-efficient operation for deployment in resource-constrained environments
+**Team Name:** Binary Cartel
+**Project Title:** Health Monitoring System
+**Date:** 21st September 2025
+**Course:** CS3520 - Computer Organisation and Architecture I
 
 ---
 
-## 2. Domain Analysis (Application Context & Workload Requirements)
+## 1. Application Context
 
-### 2.1 Application Context
+Mobile phones are the backbone of African technology due to their affordability and accessibility. However, healthcare services in many rural communities remain scarce, with facilities often focusing more on chronic illnesses. Our project proposes a low-cost, AI-enabled RISC-V processor embedded in mobile phones to support health monitoring. This domain addresses urgent challenges: limited access to clinics, absence of continuous health tracking, and delays in early detection of illness.
 
-Mobile AI telephony can revolutionize healthcare delivery in underserved communities by providing:
-
-**Real-world Applications:**
-- **Wearable Health Devices:** Continuous monitoring of vital signs through smartwatches and fitness trackers
-- **Mobile Health Applications:** Smartphone-based health monitoring with AI-powered analysis
-- **Emergency Alert Systems:** Automatic detection and notification of health emergencies
-- **Telemedicine Support:** Remote consultation capabilities with AI-assisted diagnostics
-
-**Local Relevance for Africa/Lesotho:**
-- **Low-cost Implementation:** Affordable solutions that don't require expensive infrastructure
-- **Offline Capability:** Systems that function without constant internet connectivity
-- **Energy Efficiency:** Battery-powered devices suitable for areas with unreliable electricity
-- **Cultural Sensitivity:** User interfaces adapted to local languages and healthcare practices
-- **Scalability:** Solutions that can be deployed across rural and urban environments
-
-### 2.2 Representative Applications
-
-Our health monitoring system encompasses several key application areas:
-
-#### Vital Signs Monitoring
-- **Heart Rate Monitoring:** Continuous tracking of cardiac rhythm and rate
-- **Body Temperature Monitoring:** Detection of fever and hypothermia
-- **Oxygen Saturation (SpO2):** Monitoring blood oxygen levels
-- **Blood Pressure Tracking:** Regular measurement and trend analysis
-
-#### Early Detection of Anomalies
-- **Arrhythmia Detection:** Identification of irregular heart rhythms
-- **Fever Detection:** Early warning system for elevated body temperature
-- **Hypoxia Detection:** Monitoring for dangerous drops in blood oxygen
-- **Trend Analysis:** Long-term health pattern recognition
-
-#### Data Logging and Reporting
-- **Health Record Management:** Secure storage of patient health data
-- **Healthcare Worker Communication:** Automated reports to medical professionals
-- **Emergency Notifications:** Instant alerts for critical health events
-- **Health Analytics:** Pattern recognition for preventive care
-
-### 2.3 Workload Requirements
-
-The health monitoring system requires efficient handling of diverse computational workloads:
-
-#### Data Acquisition
-- **Continuous Sensor Sampling:** Real-time collection from multiple sensors (heart rate, temperature, accelerometer)
-- **Data Synchronization:** Coordinating inputs from various sensor sources
-- **Quality Control:** Ensuring data integrity and handling sensor errors
-- **Buffering:** Managing data flow during high-frequency sampling
-
-#### Signal Processing
-- **Noise Filtering:** Removing environmental interference from sensor readings
-- **Feature Extraction:** Identifying relevant patterns in physiological signals
-- **Trend Analysis:** Computing moving averages and statistical measures
-- **Data Compression:** Reducing data size for efficient storage and transmission
-
-#### AI/ML Inference
-- **Lightweight Classification:** Real-time categorization of health states (normal/abnormal)
-- **Threshold-based Detection:** Automated alerts based on predefined health parameters
-- **Anomaly Detection:** Identifying unusual patterns that may indicate health issues
-- **Predictive Analysis:** Early warning systems based on trend analysis
-
-#### Communication
-- **Data Transmission:** Secure sending of health data to servers or cloud platforms
-- **Alert Systems:** Immediate notification to healthcare providers and emergency contacts
-- **Synchronization:** Coordinating with mobile applications and external devices
-- **Protocol Management:** Handling various communication standards (Bluetooth, WiFi, cellular)
-
-#### User Interaction
-- **Mobile Display:** Clear visualization of health metrics and trends
-- **Alert Notifications:** User-friendly warning systems
-- **Data Input:** Interface for manual health data entry
-- **Settings Management:** User customization of monitoring parameters
+By enabling real-time monitoring of vital signs such as heart rate, body temperature, and physical activity, the system empowers individuals to stay updated on their health and receive timely alerts when anomalies occur. It also supports healthcare centres through continuous patient data logging, enabling proactive care. This application domain is highly relevant in Lesotho and Africa because it bridges healthcare gaps, leverages already widespread mobile adoption, and supports national digital transformation strategies aligned with the Fourth Industrial Revolution.
 
 ---
 
-## 3. Prototype High-Level Programs
+## 2. Representative Applications
 
-To validate our workload analysis and inform processor design decisions, we have developed representative prototype programs that simulate the core computational tasks of our health monitoring system:
-
-### Program 1 – Sensor Data Simulation (C++)
-**Purpose:** Generates realistic physiological data to simulate continuous sensor input  
-**Workload Represented:** Data acquisition from multiple sensors  
-**Key Operations:**
-- Random number generation with physiological constraints
-- Multi-threaded sensor simulation
-- Real-time data streaming
-- Sensor calibration and noise modeling
-
-### Program 2 – Moving Average Filter (C)
-**Purpose:** Implements digital signal processing to remove noise from sensor readings  
-**Workload Represented:** Signal processing and noise reduction  
-**Key Operations:**
-- Sliding window calculations
-- Floating-point arithmetic operations
-- Array manipulation and memory access patterns
-- Real-time filtering with minimal latency
-
-### Program 3 – Threshold Classifier (Java)
-**Purpose:** Performs real-time classification of health states based on vital sign thresholds  
-**Workload Represented:** AI/ML inference and decision making  
-**Key Operations:**
-- Multi-parameter threshold evaluation
-- Classification algorithms
-- Rule-based decision trees
-- Real-time inference with low latency requirements
-
-### Program 4 – Data Logger (C)
-**Purpose:** Manages storage and transmission of health monitoring data  
-**Workload Represented:** Communication and data management  
-**Key Operations:**
-- File I/O operations
-- Data serialization and compression
-- Network communication protocols
-- Error handling and data integrity checks
+| Application                | Short Description                                  | Key Computational Tasks                              | Notes (Relevance)                       |
+| -------------------------- | -------------------------------------------------- | ---------------------------------------------------- | --------------------------------------- |
+| **Vital Signs Monitoring** | Track heart rate, temperature, and activity levels | Sensor data acquisition, filtering, basic statistics | Essential for personal health awareness |
+| **Anomaly Detection**      | Identify irregularities (e.g., fever, abnormal HR) | Lightweight ML inference, pattern recognition        | Supports early diagnosis & reduces risk |
+| **Data Logging**           | Maintain daily health records                      | Storage, indexing, lightweight encryption            | Enables continuity of care for patients |
+| **Emergency Alerts**       | Notify healthcare workers/family in emergencies    | Event handling, SMS/USSD, secure communication       | Life-saving in urgent cases             |
+| **Health Tips & Feedback** | Provide lifestyle recommendations                  | Rule-based logic, simple message generation          | Promotes preventive healthcare          |
 
 ---
 
-## 4. Summary and Next Steps
+## 3. Workload Characteristics
 
-### Key Findings
+The workloads are defined by continuous sensor-driven computation combined with lightweight AI inference. Data acquisition involves frequent reads from sensors (or simulated equivalents) that must be cleaned and filtered. Signal processing requires simple arithmetic for noise removal and data smoothing. AI inference applies small machine learning models to classify anomalies in vital signs, emphasizing low-latency matrix/vector operations. Communication workloads involve secure but lightweight protocols (SMS, USSD, or internet when available), requiring efficient data movement. User interaction is simple, limited to notifications and clear health feedback.
 
-Through our domain analysis and prototype development, we have identified the critical workloads that our RISC-V-based processor must efficiently support:
+Overall, the processor must handle small but frequent arithmetic workloads, lightweight ML inference, and secure communication with minimal power consumption. Memory operations are also critical for continuous health data logging. These requirements reflect the realities of rural African contexts: intermittent connectivity, limited electricity, and the need for reliable, energy-efficient mobile health solutions.
 
-1. **High-frequency data acquisition** requiring efficient I/O and real-time processing capabilities
-2. **Signal processing operations** demanding optimized arithmetic units and memory access patterns
-3. **Lightweight AI inference** needing specialized instructions for classification and threshold operations
-4. **Communication protocols** requiring secure and energy-efficient data transmission capabilities
+---
 
-### Processor Design Implications
+## 4. Initial Insights for Processor Design
 
-Our analysis reveals several key requirements that will inform our ISA customization in Week 6:
+* Optimized for frequent small matrix/vector computations (AI inference).
+* Low-power design suitable for battery-constrained devices.
+* Support secure, lightweight communication protocols (SMS/USSD).
+* Efficient memory management for continuous health data logging.
+* Simple arithmetic instructions for filtering and averaging in signal processing.
+* Compact, customizable ISA for targeted health monitoring workloads.
 
-#### Arithmetic and Processing Requirements
-- **Efficient floating-point operations** for signal processing algorithms
-- **Specialized arithmetic instructions** for statistical calculations (moving averages, variance)
-- **Low-latency integer operations** for real-time threshold comparisons
-- **SIMD capabilities** for parallel processing of sensor data arrays
+---
 
-#### AI and Machine Learning Support
-- **Lightweight neural network instructions** for basic classification tasks
-- **Optimized matrix operations** for linear algebra computations
-- **Threshold comparison instructions** with built-in branching
-- **Pattern matching capabilities** for anomaly detection algorithms
+## 5. References
 
-#### Communication and I/O Enhancements
-- **Low-power communication protocols** optimized for mobile environments
-- **Secure data transmission instructions** with built-in encryption support
-- **Efficient buffering mechanisms** for handling multiple data streams
-- **Power management instructions** for battery optimization
+1. Abebe, R., Aruleba, K., Birhane, A., Kingsley, S., Obaido, G., Remy, S. & Sadagopan, S., 2021. *Narratives and Counternarratives on Data Sharing in Africa*. arXiv:2103.01168. [online] Available at: [https://arxiv.org/abs/2103.01168](https://arxiv.org/abs/2103.01168) [Accessed 23 September 2025].
 
-#### Memory and Storage Optimizations
-- **Compressed data storage formats** to maximize limited mobile storage
-- **Efficient cache management** for real-time data processing
-- **Low-latency memory access** for continuous sensor monitoring
-- **Data integrity checking** with hardware-accelerated error correction
+2. World Health Organisation, 2021. *Global Strategy on Digital Health 2020-2025*. Geneva: WHO. [online] Available at: [https://www.who.int/docs/default-source/documents/gs4dhdaa2a9f352b0445bafbc79ca799dce4d.pdf](https://www.who.int/docs/default-source/documents/gs4dhdaa2a9f352b0445bafbc79ca799dce4d.pdf) [Accessed 23 September 2025].
 
-### Next Steps for Week 6
+3. Okolo, C.T., Aruleba, K. & Obaido, G., 2022. *Responsible AI in Africa—Challenges and Opportunities*. In: Social and Cultural Studies of Robots and AI (SOCUSRA). Singapore: Springer. Available at: [https://doi.org/10.1007/978-3-031-08215-3_3](https://doi.org/10.1007/978-3-031-08215-3_3) [Accessed 23 September 2025].
 
-1. **ISA Design:** Develop custom RISC-V extensions based on identified workload requirements
-2. **Instruction Set Definition:** Create specialized instructions for health monitoring operations
-3. **Processor Architecture:** Design CPU components optimized for mobile AI telephony workloads
-4. **Performance Analysis:** Simulate and evaluate processor performance with our prototype programs
-5. **Power Optimization:** Implement energy-efficient design strategies for mobile deployment
+4. Tshimuila, J.M., Kalengayi, M., Makenga, D. et al., 2024. *Artificial Intelligence for Public Health Surveillance in Africa: Applications and Opportunities*. arXiv:2408.02575. [online] Available at: [https://arxiv.org/abs/2408.02575](https://arxiv.org/abs/2408.02575) [Accessed 23 September 2025].
 
-Our comprehensive workload analysis provides a solid foundation for designing a RISC-V processor that can effectively support health monitoring applications in resource-constrained mobile environments, particularly addressing the healthcare challenges in developing regions like Africa and Lesotho.
+5. GSMA Intelligence, 2023. *The Mobile Economy: Sub-Saharan Africa 2023*. London: GSMA. [online] Available at: [https://www.gsma.com/mobileeconomy/sub-saharan-africa/2023/](https://www.gsma.com/mobileeconomy/sub-saharan-africa/2023/) [Accessed 23 September 2025].
+
+6. RISC-V International, 2019. *The RISC-V Instruction Set Manual, Volume I: User-Level ISA, Document Version 20191213*. [online] Available at: [https://riscv.org/technical/specifications/](https://riscv.org/technical/specifications/) [Accessed 23 September 2025].
